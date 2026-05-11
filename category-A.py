@@ -139,8 +139,18 @@ def create_table(cursor):
     status TEXT
     """
 
-    # Write CREATE TABLE code here
-    pass
+cursor.execute(
+    """
+CREATE TABLE IF NOT EXIST student_records();
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    date TEXT,
+    name TEXT,
+    course TEXT,
+    score TEXT,
+    score TEXT,
+    status TEXT, 
+) """ 
+)
 
 
 def insert_records(cursor, records):
@@ -155,6 +165,7 @@ def insert_records(cursor, records):
     # Write INSERT INTO code here
     pass
 
+INSERT INTO (date, name, course, score, status) VALUES
 
 def select_records(cursor):
     """
@@ -167,7 +178,6 @@ def select_records(cursor):
 
     # Write SELECT code here
     pass
-
 
 def main():
     records = extract_and_transform()
